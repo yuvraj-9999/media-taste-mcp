@@ -2,7 +2,7 @@
 
 A small, local **Model Context Protocol (MCP)** server built as a hands-on exploration of MCP, AI tool integration, resources, prompts, and persistent personal data.
 
-The project solves a simple but real problem which i actually face as a guy who absolutely love movies:
+The project solves a simple but real problem which I actually face as someone who absolutely loves movies:
 
 > **I want an AI assistant that can maintain my personal movie history and use that history to understand how my movie taste evolves over time.**
 
@@ -39,9 +39,9 @@ The responsibilities are intentionally separated:
 ┌──────────────────────────┐
 │      Claude Desktop      │
 │                          │
-│     AI reasoning         │
-│     Tool calling         │
-│     Interpretation       │
+│    AI reasoning          │
+│    Tool calling          │
+│    Interpretation        │
 └────────────┬─────────────┘
              │
              │ MCP / stdio
@@ -419,11 +419,21 @@ media-taste-mcp/
 │   ├── movies.example.json
 │   └── movies.json
 │
+├── outputs/
+│   ├── add_media_and_rate_media_tool.png
+│   ├── get_taste_profile.png
+│   ├── prompt1.png
+│   ├── prompt2.png
+│   ├── prompts.png
+│   └── search_media_tool.png
+│
 ├── src/
 │   └── media_taste_mcp/
+│       ├── __init__.py
 │       └── server.py
 │
 ├── .gitignore
+├── .python-version
 ├── pyproject.toml
 ├── uv.lock
 └── README.md
@@ -488,7 +498,6 @@ The example dataset can contain both rated and unrated movies so that search and
 # Getting Started
 
 ## Prerequisites
-
 Install:
 
 - Python 3.13+
@@ -500,13 +509,11 @@ The project was developed and tested with Python 3.13+.
 
 ## 1. Clone the repository
 
-If this project is inside the `AIML-Assignments` repository:
-
 ```bash
-git clone https://github.com/yuvraj-9999/AIML-Assignments
-
-cd AIML-Assignments/mcp_servers/media-taste-mcp
+git clone https://github.com/yuvraj-9999/media-taste-mcp.git
+cd media-taste-mcp
 ```
+
 ---
 
 ## 2. Install dependencies
@@ -518,7 +525,6 @@ uv sync
 ---
 
 ## 3. Create your local data file
-
 Copy the example dataset.
 
 ### Windows PowerShell
@@ -631,7 +637,7 @@ pyproject.toml
 For example:
 
 ```text
-D:\aiml\mcp_servers\media-taste-mcp
+D:\mcp\media-taste-mcp
 ```
 
 The Python server itself is located at:
@@ -643,6 +649,29 @@ src\media_taste_mcp\server.py
 After changing the configuration or moving the project, restart Claude Desktop so that it launches the server using the updated configuration.
 
 The exact Claude Desktop configuration location depends on the operating system and installation method.
+
+---
+
+# Demo
+
+The repository includes screenshots demonstrating the MCP server's capabilities.
+
+The screenshots are stored in:
+
+```text
+outputs/
+```
+
+They include demonstrations of:
+
+- `add_media`
+- `rate_media`
+- `search_media`
+- `get_taste_profile`
+- MCP prompts
+- Prompt execution
+
+These screenshots provide visual evidence of the server being tested through MCP tooling and an AI client.
 
 ---
 
@@ -702,7 +731,7 @@ This keeps the project intentionally lightweight and removes the need for:
 
 # Why This Is an MCP Project
 
-The project intentionally demonstrates the three major MCP primitives required for the assignment:
+The project intentionally demonstrates the three major MCP primitives:
 
 ```text
 Tools
